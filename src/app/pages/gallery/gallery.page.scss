@@ -1,0 +1,26 @@
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1E3A8A 0%, #EC4899 100%);
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+}
+
+ion-icon {
+  font-size: 120px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 40px 0;
+}

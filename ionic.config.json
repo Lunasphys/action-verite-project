@@ -1,0 +1,8 @@
+{
+  "name": "action-verite-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
+

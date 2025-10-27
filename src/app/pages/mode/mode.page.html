@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Choisir un mode</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="content">
+    <h1>Sélectionnez un mode</h1>
+    <p>Le mode détermine les cartes disponibles pendant la partie</p>
+
+    <ion-card *ngFor="let mode of gameModes" (click)="selectMode(mode)" button>
+      <ion-card-header>
+        <ion-card-title>{{mode.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{mode.description}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+

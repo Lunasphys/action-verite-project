@@ -1,0 +1,110 @@
+Sujet Mini-projet
+Action Vérité
+Brief
+Développer une application mobile permettant de jouer à Action ou Vérité entre amis sur un seul téléphone
+Fonctionnalités attendues
+Page d’accueil
+•
+Entrer un pseudo et un genre (Homme / Femme)
+o
+Les informations devront être stockés en local (storage) pour une partie future
+•
+Ajouter ou supprimer des joueurs
+•
+Une fois la liste de joueurs valides, un bouton permettant d’initialiser la liste des joueurs et d’accéder à la Page Mode
+Page Mode
+•
+Choisir un mode jeu (ex : Classique, En soirée, Extrême…)
+•
+Le mode sélectionné détermine les cartes disponibles (thèmes et intensité)
+•
+L’un des modes doit être bloqués derrière un paiement
+Page Game (Partie)
+•
+Le joueur en cours est affiché : « C’est à Léo »
+•
+Le joueur choisit entre Action ou Vérité
+•
+Règle spéciale : après 3 vérités consécutives, le joueur doit obligatoire faire une action
+Tirage de carte
+Une carte aléatoire est tirée selon :
+•
+Le mode sélectionné
+•
+Le type (action ou vérité)
+•
+Le genre du joueur actuel
+•
+Si la carte est répétable ou non
+Par défaut une carte ne peut pas être tirée 2 fois par le même joueur
+Structure d’une carte
+mode
+Nom du mode associé
+type
+action ou vérité
+description
+Texte de la carte avec variables dynamiques
+Genre du joueur 1
+Genre requis du joueur actuel : Homme, Femme ou Tous
+Genre du joueur 2 (optionnel)
+Genre requis du joueur 2 : Homme, Femme ou Tous
+Timer (optionnel)
+Durée en secondes si l’action est chronométrée
+repetable
+Booléen : indique si la carte peut être rejouée par le même joueur
+Photo Obligatoire (optionnel)
+Booléen : indique si l’action doit être validée par une photo
+Exemple de description
+« Joueur 1 doit avouer un secret gênant » => devient « Léo doit avouer un secret gênant »
+« Joueur 1 doit danser avec Joueur 2 » => devient « Alex doit danser avec Sam »
+Les remplacements doivent être faits dynamiquement selon les pseudos des joueurs en cours. Le joueur 2 doit être choisi selon le Genre du joueur 2 de la carte.
+Actions spéciales
+Timer et vibration
+•
+Certaines actions ont une durée (ex : chanter pendant 30s)
+•
+Un compte à rebours s’affiche
+•
+A la fin du timer, le téléphone vibre pour signaler la fin de l’action
+Photo obligatoire
+•
+Certains actions demandent de prendre une photo via l’application
+•
+La photo est enregistrée dans une galerie interne à l’app (stockage local)
+Page Galerie
+Une page Galerie permet de consulter les photos prises pendant les parties
+Mode Extrême (Payant)
+L’un des modes (ex : Mode Extrême) est payant
+Pour lancer une partie dans ce mode, l’utilisateur doit payer :
+•
+Minimum 0,50€
+•
+Moyens de paiement : Carte bancaire, Apple Pay, Google Pay
+•
+Les paiements seront gérés via Stripe
+Bonus (facultatif)
+•
+Authentification et liste d’amis
+•
+Ajouter une gestion de comptes
+•
+Invitations entre amis
+•
+Envoyer une notification push lorsqu’on invite quelqu’un à jouer
+•
+Sessions multi-appareils (QR Code)
+•
+Permet de rejoindre une session en scannant un QR code généré par l’hôte
+Technologies recommandées Framework : Angular – Capacitor – Ionic
+Paiement : Stripe (obligatoire)
+Authentification et amis : Firebase Auth et Firestore
+Notifications (bonus) : Firebase Cloud Messaging (FCM)
+N’oubliez pas :
+Gérer les erreurs
+•
+Aucun joueur dans la liste
+•
+S’il n’y a plus de cartes qui correspondent au critère de tirage (plus de vérité, plus de carte avec le genre du joueur etc…)
+•
+Etc…
+De penser à l’UX !

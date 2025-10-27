@@ -1,0 +1,110 @@
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1E3A8A 0%, #EC4899 100%);
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+ion-card {
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+ion-item {
+  --padding-start: 0;
+  --background: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+ion-segment {
+  --background: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+ion-segment-button {
+  --color-checked: #9D2AA7;
+  border-radius: 8px;
+}
+
+ion-button {
+  --border-radius: 15px;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+ion-card-header {
+  background: linear-gradient(135deg, #00B0FF 0%, #9D2AA7 100%);
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+ion-card-title {
+  color: white;
+  font-weight: bold;
+}
+
+// Logo/App title styling
+.app-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+
+  .logo-container {
+    display: flex;
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+    .logo-left {
+      width: 50%;
+      background: linear-gradient(135deg, #EC4899 0%, #9D2AA7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-right {
+      width: 50%;
+      background: linear-gradient(135deg, #00B0FF 0%, #1E3A8A 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ion-icon {
+      font-size: 40px;
+      color: white;
+    }
+  }
+
+  .title-text {
+    font-size: 32px;
+    font-weight: bold;
+
+    .text-blue {
+      color: #00B0FF;
+    }
+
+    .text-magenta {
+      color: #EC4899;
+    }
+  }
+}

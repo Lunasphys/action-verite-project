@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Partie en cours</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="content" *ngIf="currentPlayer">
+    <!-- Joueur actuel -->
+    <div class="current-player">
+      <h2>Au tour de :</h2>
+      <h1>{{currentPlayer.pseudo}} !</h1>
+    </div>
+
+    <!-- Message si 3 vérités -->
+    <div class="warning-message" *ngIf="!canChooseTruth()">
+      ⚠️ Après 3 vérités consécutives, vous devez faire une action !
+    </div>
+
+    <!-- Choix Action ou Vérité -->
+    <div class="choice-buttons" *ngIf="!isCardVisible">
+      <ion-button 
+        expand="block" 
+        size="large" 
+        color="danger"
+        [disabled]="!canChooseTruth()"
+        (click)="chooseType('vérité')">
+        <ion-icon slot="start" name="help-circle"></ion-icon>
+        Vérité
+      </ion-button>
+
+      <ion-button 
+        expand="block" 
+        size="large" 
+        color="primary"
+        (click)="chooseType('action')">
+        <ion-icon slot="start" name="flash"></ion-icon>
+        Action
+      </ion-button>
+    </div>
+
+    <!-- Carte tirée -->
+    <div class="card-container" *ngIf="isCardVisible && currentCard">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{currentCard.type === 'vérité' ? 'VÉRITÉ' : 'ACTION'}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="card-description">{{getFormattedDescription()}}</p>
+          
+          <!-- Timer -->
+          <div class="timer" *ngIf="hasTimer">
+            <ion-icon name="time"></ion-icon>
+            <span>{{timerValue}}s</span>
+          </div>
+
+          <!-- Photo obligatoire -->
+          <ion-chip color="warning" *ngIf="currentCard.photoObligatoire">
+            <ion-icon name="camera"></ion-icon>
+            <ion-label>Photo obligatoire</ion-label>
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-button expand="block" (click)="nextPlayer()">
+        Prochain joueur
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+

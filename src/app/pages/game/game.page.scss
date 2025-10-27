@@ -1,0 +1,131 @@
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  background: #FFE100;
+}
+
+.current-player {
+  text-align: center;
+  margin: 60px 0 40px;
+
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #9D2AA7;
+    margin: 0;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #9D2AA7;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  .genre {
+    font-size: 18px;
+    color: rgba(157, 42, 167, 0.7);
+    margin-top: 10px;
+  }
+}
+
+.choice-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.choice-buttons ion-button {
+  height: 80px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #9D2AA7;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(90deg, #00B0FF 0%, #9D2AA7 100%);
+
+  ion-icon {
+    font-size: 32px;
+    margin-right: 10px;
+  }
+
+  &.ion-color-danger {
+    --background: linear-gradient(90deg, #00B0FF 0%, #9D2AA7 100%);
+    --color: white;
+  }
+
+  &.ion-color-primary {
+    --background: linear-gradient(90deg, #9D2AA7 0%, #EC4899 100%);
+    --color: white;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+.card-container {
+  margin-top: 30px;
+}
+
+ion-card {
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+ion-card-header {
+  background: linear-gradient(135deg, #9D2AA7 0%, #EC4899 100%);
+  color: white;
+  padding: 20px;
+}
+
+ion-card-title {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-description {
+  font-size: 24px;
+  text-align: center;
+  margin: 30px 0;
+  color: #9D2AA7;
+  font-weight: bold;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 48px;
+  color: #EC4899;
+  margin: 20px 0;
+  font-weight: bold;
+
+  ion-icon {
+    font-size: 40px;
+  }
+}
+
+ion-chip {
+  margin-top: 20px;
+}
+
+// Message warning pour 3 vérités
+.warning-message {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px;
+  border-radius: 15px;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #EC4899;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
