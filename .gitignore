@@ -24,3 +24,7 @@ out-tsc/
 
 # Dependencies
 node_modules/
+
+# Angular cache
+.angular/
+.cache/
