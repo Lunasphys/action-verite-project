@@ -42,7 +42,7 @@ export class GamePage implements OnInit {
     }
 
     this.isCardVisible = false;
-    const card = this.gameService.drawCard(type);
+    const card = await this.gameService.drawCard(type);
     
     if (!card) {
       alert('Aucune carte disponible');
@@ -82,11 +82,11 @@ export class GamePage implements OnInit {
     }
   }
 
-  nextPlayer() {
+  async nextPlayer() {
     if (this.timerInterval) {
       clearInterval(this.timerInterval);
     }
-    this.gameService.nextPlayer();
+    await this.gameService.nextPlayer();
     this.isCardVisible = false;
     this.currentCard = null;
     this.loadGame();
@@ -103,8 +103,11 @@ export class GamePage implements OnInit {
   getFormattedDescription(): string {
     if (!this.currentCard || !this.currentPlayer) return '';
     
-    // Cette fonction devrait être implémentée dans le service
-    return this.currentCard.description.replace(/Joueur 1/g, this.currentPlayer.pseudo);
+    // Récupère tous les autres joueurs depuis le GameService
+    const otherPlayers = this.gameService.getOtherPlayers();
+    
+    // Utilise la méthode du service pour remplacer les variables
+    return this.cardsService.replaceVariables(this.currentCard, this.currentPlayer, otherPlayers);
   }
 }
 

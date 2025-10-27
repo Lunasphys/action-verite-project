@@ -65,6 +65,9 @@ export class HomePage implements OnInit {
       return;
     }
 
+    // Sauvegarde les joueurs dans le localStorage AVANT de naviguer
+    await this.storageService.savePlayers(this.players);
+
     // Sauvegarde le joueur actuel
     if (this.currentPseudo.trim()) {
       await this.storageService.setPlayer({

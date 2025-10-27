@@ -22,6 +22,9 @@ export class CardsService {
     { id: '11', mode: 'soiree', type: 'action', description: 'Joueur 1 doit danser avec Joueur 2 pendant 30 secondes', genreJoueur1: 'Femme', genreJoueur2: 'Homme', repetable: false, timer: 30, photoObligatoire: true },
     { id: '12', mode: 'soiree', type: 'vérité', description: 'Joueur 1 doit dire qui est la personne la plus attirante ici', genreJoueur1: 'Tous', repetable: false },
     { id: '13', mode: 'soiree', type: 'action', description: 'Joueur 1 doit faire un limbo', genreJoueur1: 'Tous', repetable: false, photoObligatoire: true },
+
+      // Mode hot
+      {id : '12', mode: 'hot', type: 'vérité', description: 'Joueur 1 doit demander à joueur 2 s\'il préfère perdre son pénis ou ses bras', genreJoueur1: 'Tous', genreJoueur2:'Homme', repetable: false, timer: 30 },
   ];
 
   getCardsByMode(mode: string): Card[] {
